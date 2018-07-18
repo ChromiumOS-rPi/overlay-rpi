@@ -1,0 +1,3 @@
+# Mask higher version mesa in the chromiumos-overlay so versions in this overlay get built.
+# Mesa in chromiumos-overlay can't boot into UI, probably due to VC4 dri driver problem.
+>=media-libs/mesa-12

@@ -1,0 +1,14 @@
+diff --git a/rules/60-persistent-storage.rules b/rules/60-persistent-storage.rules
+index 05a405f..bdc73fc 100644
+--- a/rules/60-persistent-storage.rules
++++ b/rules/60-persistent-storage.rules
+@@ -10,7 +10,7 @@ ACTION=="remove", GOTO="persistent_storage_end"
+ SUBSYSTEM!="block", GOTO="persistent_storage_end"
+ 
+ # skip rules for inappropriate block devices
+-KERNEL=="fd*|mtd*|nbd*|gnbd*|btibm*|dm-*|md*", GOTO="persistent_storage_end"
++KERNEL=="fd*|mtd*|nbd*|gnbd*|btibm*|dm-*|md*|zram*", GOTO="persistent_storage_end"
+ 
+ # ignore partitions that span the entire disk
+ TEST=="whole_disk", GOTO="persistent_storage_end"
+

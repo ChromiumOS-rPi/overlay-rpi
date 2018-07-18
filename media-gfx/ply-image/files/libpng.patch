@@ -1,0 +1,13 @@
+diff -Nurp -Nurp ply-image-0.0.1.orig/src/ply-image.c ply-image-0.0.1/src/ply-image.c
+--- ply-image-0.0.1.orig/src/ply-image.c	2017-08-27 10:20:57.324705578 +0800
++++ ply-image-0.0.1/src/ply-image.c	2017-08-27 10:21:15.936603233 +0800
+@@ -191,7 +191,7 @@ static bool ply_image_load(ply_image_t *
+     png_set_palette_to_rgb(png);
+ 
+   if ((color_type == PNG_COLOR_TYPE_GRAY) && (bits_per_pixel < 8))
+-    png_set_gray_1_2_4_to_8(png);
++    png_set_expand_gray_1_2_4_to_8(png);
+ 
+   if (png_get_valid(png, info, PNG_INFO_tRNS))
+     png_set_tRNS_to_alpha(png);
+Binary files ply-image-0.0.1.orig/src/.ply-image.c.swp and ply-image-0.0.1/src/.ply-image.c.swp differ
